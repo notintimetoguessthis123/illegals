@@ -38,6 +38,14 @@ nav {
     margin-bottom: auto;
 }
 
+.close-btn {
+    align-self: flex-end;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: none; /* Hide the close button by default */
+}
+
 .center-logos {
     display: flex;
     flex-direction: column;
@@ -163,14 +171,15 @@ nav .left-logo {
 @media (max-width: 768px) {
     .hamburger-menu {
         display: block;
+        margin-right: 20px; /* Ensure hamburger menu is visible */
     }
 
     .sidebar {
         display: none;
-        width: 100%;
+        width: calc(100% - 20px); /* Adjusted width */
         height: auto;
         position: absolute;
-        left: 0;
+        left: 10px; /* Adjusted position */
         padding: 10px;
         background-color: #000;
     }
@@ -182,6 +191,10 @@ nav .left-logo {
     .center-logos {
         flex-direction: row;
         justify-content: space-around;
+    }
+
+    .close-btn {
+        display: block; /* Show the close button on mobile */
     }
 
     .cards-container {
