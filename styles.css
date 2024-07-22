@@ -7,6 +7,7 @@ body, html {
     scroll-behavior: smooth;
     background-color: #1a1a1a;
     color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 nav {
@@ -15,9 +16,7 @@ nav {
     align-items: center;
     padding: 10px 20px;
     background-color: #000;
-    position: fixed;
     width: 100%;
-    top: 0;
     z-index: 1000;
 }
 
@@ -54,24 +53,17 @@ nav .left-logo {
 .sidebar-logo {
     height: 60px;
     margin: 20px 0;
-    transition: transform 0.2s; /* Add transition for smooth scaling */
+    transition: transform 0.2s;
 }
 
 .sidebar-logo:hover {
-    transform: scale(1.2); /* Scale up the logo on hover */
+    transform: scale(1.2);
 }
 
-
-
-nav .center-logos {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-}
-
-nav .center-logos img {
-    height: 50px;
-    margin: 0 10px;
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 .full-screen-image {
@@ -102,13 +94,13 @@ nav .center-logos img {
 .full-screen-image .overlay h1 {
     font-size: 4rem;
     margin: 0;
-    color: #ff0000; /* Red color */
-    text-shadow: 2px 2px #0000ff; /* Blue shadow */
+    color: #ff0000;
+    text-shadow: 2px 2px #0000ff;
 }
 
 .full-screen-image .overlay h2 {
     font-size: 2rem;
-    color: #ffffff; /* White color */
+    color: #ffffff;
 }
 
 .cards-container {
@@ -138,8 +130,8 @@ nav .center-logos img {
     transition: transform 0.2s, box-shadow 0.2s;
     color: white;
     font-family: 'Open Sans', sans-serif;
-    border-top: 5px solid #ff0000; /* Red border on top */
-    border-bottom: 5px solid #0000ff; /* Blue border on bottom */
+    border-top: 5px solid #ff0000;
+    border-bottom: 5px solid #0000ff;
 }
 
 .card:hover {
@@ -169,6 +161,29 @@ nav .center-logos img {
 }
 
 @media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .sidebar {
+        display: none;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        left: 0;
+        padding: 10px;
+        background-color: #000;
+    }
+
+    .sidebar .top-logo {
+        display: none;
+    }
+
+    .center-logos {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
     .cards-container {
         width: 100%;
     }
@@ -183,8 +198,21 @@ nav .center-logos img {
         align-items: center;
     }
 
-    nav .left-logo, nav .center-logos img {
-        height: 40px;
+    nav .left-logo {
+        height: 50px;
+    }
+
+    .full-screen-image {
+        height: auto;
+    }
+
+    .full-screen-image .overlay {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-top: 20px;
+        width: 100%; /* Ensure overlay is centered */
     }
 
     .full-screen-image .overlay h1 {
@@ -201,6 +229,6 @@ nav .center-logos img {
     }
 
     .sidebar-logo:hover {
-        transform: scale(1.2); /* Ensure hover effect remains in responsive mode */
+        transform: scale(1.2);
     }
 }
