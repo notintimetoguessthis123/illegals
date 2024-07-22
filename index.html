@@ -10,15 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <meta property="og:title" content="ILLEGALS" />
     <meta property="og:description" content="DEPORT THE ILLEGALS." />
-    <meta property="og:image" content="https://illegals.xyz/images/logo.png" />
+    <meta property="og:image" content="https://notintimetoguessthis123.github.io/magaverse/images/logo.png" />
     <meta property="og:url" content="https://illegals.xyz" />
     <meta property="og:type" content="website" />
 </head>
 <body>
-    <div class="sidebar">
+    <nav>
+        <img src="images/logo.png" alt="Left Logo" class="left-logo">
+        <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">&times;</div>
         <img src="images/logo.png" alt="Left Logo" class="sidebar-logo top-logo">
         <div class="center-logos">
-            <a href="https://x.com/illegaleth"><img src="images/xlogo.png" alt="Logo 1" class="sidebar-logo"></a>
+            <a href="https://x.com"><img src="images/xlogo.png" alt="Logo 1" class="sidebar-logo"></a>
             <a href="https://t.me/undocumentedimmigrant"><img src="images/tlogo.png" alt="Logo 2" class="sidebar-logo"></a>
             <a href="https://dextools.io"><img src="images/dlogo.png" alt="Logo 3" class="sidebar-logo"></a>
         </div>
@@ -68,6 +73,15 @@
             }, function(err) {
                 console.log("bad!")
             });
+        }
+
+        function toggleMenu() {
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar.style.display === 'block') {
+                sidebar.style.display = 'none';
+            } else {
+                sidebar.style.display = 'block';
+            }
         }
     </script>
 </body>
