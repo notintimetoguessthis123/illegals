@@ -38,14 +38,6 @@ nav {
     margin-bottom: auto;
 }
 
-.close-btn {
-    align-self: flex-end;
-    font-size: 30px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    display: none; /* Hide the close button by default */
-}
-
 .center-logos {
     display: flex;
     flex-direction: column;
@@ -168,6 +160,29 @@ nav .left-logo {
     margin-bottom: 10px;
 }
 
+.copy-btn {
+    background-color: #7a7a7a; /* Red background for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.copy-btn:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+.copy-btn::before {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
 @media (max-width: 768px) {
     .hamburger-menu {
         display: block;
@@ -191,10 +206,6 @@ nav .left-logo {
     .center-logos {
         flex-direction: row;
         justify-content: space-around;
-    }
-
-    .close-btn {
-        display: block; /* Show the close button on mobile */
     }
 
     .cards-container {
