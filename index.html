@@ -8,27 +8,21 @@
     <link rel="icon" href="images/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-
     <meta property="og:title" content="ILLEGALS" />
     <meta property="og:description" content="DEPORT THE ILLEGALS." />
-    <meta property="og:image" content="https://notintimetoguessthis123.github.io/magaverse/images/logo.png" />
+    <meta property="og:image" content="https://illegals.xyz/images/logo.png" />
     <meta property="og:url" content="https://illegals.xyz" />
     <meta property="og:type" content="website" />
 </head>
 <body>
-    <nav>
-        <img src="images/logo.png" alt="Left Logo" class="left-logo">
-        <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
-        <div class="sidebar" id="sidebar">
-            <div class="close-btn" onclick="toggleMenu()">&times;</div>
-            <img src="images/logo.png" alt="Left Logo" class="sidebar-logo top-logo">
-            <div class="center-logos">
-                <a href="https://x.com/illegaleth"><img src="images/xlogo.png" alt="Logo 1" class="sidebar-logo"></a>
-                <a href="https://t.me/undocumentedimmigrant"><img src="images/tlogo.png" alt="Logo 2" class="sidebar-logo"></a>
-                <a href="https://dextools.io"><img src="images/dlogo.png" alt="Logo 3" class="sidebar-logo"></a>
-            </div>
+    <div class="sidebar">
+        <img src="images/logo.png" alt="Left Logo" class="sidebar-logo top-logo">
+        <div class="center-logos">
+            <a href="https://x.com"><img src="images/xlogo.png" alt="Logo 1" class="sidebar-logo"></a>
+            <a href="https://t.me/undocumentedimmigrant"><img src="images/tlogo.png" alt="Logo 2" class="sidebar-logo"></a>
+            <a href="https://dextools.io"><img src="images/dlogo.png" alt="Logo 3" class="sidebar-logo"></a>
         </div>
-    </nav>
+    </div>
     <div class="full-screen-image">
         <img src="images/background.png" alt="Full Screen Image">
         <div class="overlay">
@@ -49,9 +43,11 @@
                     <div class="card">
                         <h3>GENERAL</h3>
                         <p>Ticker: ILLEGALS<br>
-                            Address: 0x5Cd844D9FC8B35BCe3E9697B474BA1720111B853<br>
+                            Address: <span id="address">0x...</span>
+                            <button class="copy-btn" onclick="copyAddress()">📋 Copy</button><br>
                             Total Supply: 100,000,000<br>
-                            Circulating Supply: 100,000,000</p>
+                            Circulating Supply: 100,000,000
+                        </p>
                     </div>
                     <div class="card">
                         <h3>STATUS</h3>
@@ -65,13 +61,13 @@
         </div>
     </div>
     <script>
-        function toggleMenu() {
-            var sidebar = document.getElementById('sidebar');
-            if (sidebar.style.display === 'block') {
-                sidebar.style.display = 'none';
-            } else {
-                sidebar.style.display = 'block';
-            }
+        function copyAddress() {
+            var address = "0x5Cd844D9FC8B35BCe3E9697B474BA1720111B853";
+            navigator.clipboard.writeText(address).then(function() {
+                console.log("Address copied to clipboard!");
+            }, function(err) {
+                console.log("bad!")
+            });
         }
     </script>
 </body>
