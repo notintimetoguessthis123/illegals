@@ -38,6 +38,14 @@ nav {
     margin-bottom: auto;
 }
 
+.close-btn {
+    align-self: flex-end;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: none; /* Hide the close button by default */
+}
+
 .center-logos {
     display: flex;
     flex-direction: column;
@@ -161,7 +169,7 @@ nav .left-logo {
 }
 
 .copy-btn {
-    background-color: #7a7a7a; /* Red background for the button */
+    background-color: #7a7a7a; /* Gray background for the button */
     color: white;
     border: none;
     border-radius: 5px;
@@ -206,6 +214,10 @@ nav .left-logo {
     .center-logos {
         flex-direction: row;
         justify-content: space-around;
+    }
+
+    .close-btn {
+        display: block; /* Show the close button on mobile */
     }
 
     .cards-container {
